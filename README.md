@@ -140,3 +140,9 @@ npm test
 A continuación se grafica un diagrama de secuencia a rasgos generales para entender el flujo de la API implementada.
 
 ![Diagrama de Secuencia](diagrams/Diagrama%20de%20Secuencia%20Middleend.png)
+
+## Posibles mejoras
+
+1. Una de las cosas que se pueden mejorar es la técnica para validar el token de autenticación, si bien es cierto no era un requerimiento excluyente, se podría haber usado JWT de la mano con el uso de interceptors propios de la librería Axios.
+2. Para la documentación de los endpoints se pensó en utilizar swagger pero en los intentos de utilizarlo se convirtió en una piedra de tope, lo que puede ser un trabajo a futuro. La piedra de tope fue la configuración para permitir ingresar el token **x-auth-token** para poder realizar la consulta desde Swagger.
+3. Si bien los test unitarios logran una cobertura alta, al testear los endpoints estos siguen realizando una request real a la API de Mercado Libre, por lo que una idea válida es generar mocks de estas respuestas y evitar la sobrecarga de la API de Mercado Libre solo por correr los test unitarios.
