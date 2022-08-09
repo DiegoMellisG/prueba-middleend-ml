@@ -1,6 +1,8 @@
 
-const queryController = require('../controllers/queryController')
+const searchController = require('../controllers/searchController')
+const itemController = require('../controllers/itemController')
 
 module.exports = (app) => {
-    app.get('/query/:site', queryController.queryProcess);
+    app.get('/search/:site/:query', searchController.searchProcess);
+    app.get('/items/:id', itemController.itemProcess);
 }

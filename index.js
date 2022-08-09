@@ -12,7 +12,16 @@ app.get('/',(req, res) => res.status(200).send({
     message: 'Middleend Mercado Libre'
   }));
 
+// Ruta por defecto para páginas no encontradas
+app.use((req, res) => {
+  return res.status(404).send({
+      status: 'ERROR',
+      message: 'Página no encontrada'
+  })
+})
+
 app.listen(port, () => {
-    // tslint:disable-next-line:no-console
     console.log(`Server started at http://localhost:${port}`);
 });
+
+module.exports = app;

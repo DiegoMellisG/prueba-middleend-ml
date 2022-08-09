@@ -1,13 +1,9 @@
-function formatURL(baseUrl, queryParams) {
-
-}
-
 function formatItems(items) {
     return items.map((item) => {
         const price = {
             currency: item.currency_id,
-            amount: item.price,
-            decimals: item.price
+            amount: Math.trunc(item.price),
+            decimals: item.price%1
         }
         return {
             id: item.id,
