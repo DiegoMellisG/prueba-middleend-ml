@@ -25,8 +25,18 @@ async function itemProcess(req, res) {
                 author: AUTHOR,
                 item: item
             })
+            console.log('Headers response:', res.getHeaders());
+            console.log('Response Body', {
+                author: AUTHOR,
+                item: item
+            });
+            return;
         } else if (req.headers['x-auth-token'] === process.env.X_AUTH_TOKEN_MOCK) {
             res.status(200).send(ITEM_MOCK)
+            console.log('Headers response:', res.getHeaders());
+            console.log('Response Body', ITEM_MOCK);
+            return;
+            
         } else {
             res.status(401).send(
                 {

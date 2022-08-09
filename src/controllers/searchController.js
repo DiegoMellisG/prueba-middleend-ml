@@ -69,8 +69,14 @@ async function searchProcess(req, res) {
         if (req.headers['x-auth-token'] === process.env.X_AUTH_TOKEN) {
             const response = await getQuery(`${process.env.ML_BASE_QUERY_URL}/${req.params.site}/search?q=${req.params.query}&${queryString}`);
             res.status(200).send(response);
+            console.log('Headers response:', res.getHeaders());
+            console.log('Response Body', response);
+            return;
         }else if (req.headers['x-auth-token'] === process.env.X_AUTH_TOKEN_MOCK){
             res.status(200).send(SEARCH_QUERY_MOCK)
+            console.log('Headers Response:', res.getHeaders());
+            console.log('Response Body: ', SEARCH_QUERY_MOCK);
+            return;
         }else{
             res.status(401).send(
                 {
