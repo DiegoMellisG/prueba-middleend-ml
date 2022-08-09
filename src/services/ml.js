@@ -26,7 +26,6 @@ function getItemDescription(url) {
 }
 
 function getItem(url) {
-    console.log(url);
     return axios.get(url).then((response) => {
         const price = {
             currency: response.data.currency_id,

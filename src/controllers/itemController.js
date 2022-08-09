@@ -12,7 +12,11 @@ async function itemProcess(req, res) {
         )
         return;
     }
-    
+    console.log('Params: ', req.params);
+    console.log('Query Params: ', req.query);
+    console.log('HTTP Method: ', req.method);
+    console.log('Endpoint: ', req.url);
+    console.log('Headers: ', req.headers);
     try {
         if (req.headers['x-auth-token'] === process.env.X_AUTH_TOKEN) {
             const item = await getItem(`${process.env.ML_BASE_ITEM_URL}/${req.params.id}`);
