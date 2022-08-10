@@ -1,0 +1,5 @@
+PORT=3031
+ML_BASE_QUERY_URL=https://api.mercadolibre.com/sites
+ML_BASE_ITEM_URL=https://api.mercadolibre.com/items
+X_AUTH_TOKEN=e962f81a-4d42-4eb3-86cd-a25e7237c8dc
+X_AUTH_TOKEN_MOCK=55a4639f-55e8-4e14-a6cc-b79977b20a4e
